@@ -24,6 +24,7 @@ body {
     right: 15px; /* hard code nmatch to body padding, should be js really*/ 
     transform-origin: bottom right; /* fixed to btoom right hand corneR */
     transform:scale(0.25);
+    z-index:-1;
     
 }
 
@@ -72,18 +73,18 @@ html {
   	background-image: url('../img/main-banner.jpg');
     background-size: cover;
     background-position: 80% 25%; /* Adjusts cropping area */
-     background-repeat: repeat-y; /* IF PAGE GOES BEYOND SIZE OF IMAGE REPEAT IT */
+    background-repeat: repeat-y; /* IF PAGE GOES BEYOND SIZE OF IMAGE REPEAT IT */
     font-size:50px;
     color:white;
     position: fixed;
 	z-index: -1;
-	 min-height: 100%;
+	min-height: 100%;
 }
 
 #samFirstContainer img {
 	width:40%;
 	float: right;
-	position: sticky; /* come across stickty, seems to be my intention */
+	position: sticky; /* come across sticky, seems to be my intention */
 	top:calc(80px);
 	padding : 0% 2%;
 	 
