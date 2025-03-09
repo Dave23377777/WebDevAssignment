@@ -17,6 +17,16 @@ body {
 }
 
 
+
+#northern {
+	position: fixed;
+    bottom: 0px;
+    right: 15px; /* hard code nmatch to body padding, should be js really*/ 
+    transform-origin: bottom right; /* fixed to btoom right hand corneR */
+    transform:scale(0.25);
+    
+}
+
 /* This will style the header */
 #MenuTopBar {
     width: 100%;
@@ -102,8 +112,9 @@ padding: 15px 20px; /* Increased padding top/bottom */
 
 
 #mobile-special.expanded-width {
-	width: 100vw;
+	width: 86vw;
 	background-color:black;
+	    box-sizing: border-box;
 }
 
 #homePageTag{
