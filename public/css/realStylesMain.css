@@ -118,9 +118,9 @@ html {
 
 
 #mobile-special.expanded-width {
-	width: 86vw;
+	width: 85vw;
 	background-color:black;
-	    box-sizing: border-box;
+	padding: 5px 5px;
 }
 
 #homePageTag{
