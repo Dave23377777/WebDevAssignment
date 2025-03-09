@@ -1,18 +1,6 @@
-function insertMenn(){
-	fetch("TopMenuBar.html")
-    .then(response => response.text())
-    .then(data => {
-       	//console.log("TopMenuBar fetched:", data);
-		// insert very top
-		//document.body.insertAdjacentHTML('afterbegin', '<div class="pageContentContainer"></div>');
-         document.body.insertAdjacentHTML('afterbegin', data); 
-		 
-		 // After the HTML has been inserted, now you can find and modify elements
-		
-    })
-    .catch(error => console.error("Error loading the TopMenuBar.html:", error));
-}
-	//
+/* Functions as an appender to the htmls to append functionJ main script but with a unique name each fetch to hack no caching (else caching causing eleemnts to dispay wrong widths if first come from a different page 
+	
+	*/
 
 	
 
@@ -20,78 +8,13 @@ function insertMenn(){
 		
 		document.addEventListener('DOMContentLoaded',function() { //define here 
 		
-		fetch("TopMenuBar.html")
-		    .then(response => response.text())
-		    .then(data => {
-		       	//console.log("TopMenuBar fetched:", data);
-				// insert very top
-				//document.body.insertAdjacentHTML('afterbegin', '<div class="pageContentContainer"></div>');
-		         document.body.insertAdjacentHTML('afterbegin', data); 
-				 addMoreFunction();
-				 // After the HTML has been inserted, now you can find and modify elements
-				
-		    })
-		    .catch(error => console.error("Error loading the TopMenuBar.html:", error));
-	    // Your JavaScript code here
-	    const img = document.querySelector('#samFirstContainer img');
-	        const imgRect = img.getBoundingClientRect();
-			// get scroll position past sams image and expand samFull to full width
-						const samImg = document.querySelector('#samFirstContainer img');
-						const samImgPos = samImg.getBoundingClientRect();
-						const samFull = document.querySelector("#samFull");	
-						const mobile_special = document.querySelector("#mobile-special");
-						if(samFull.getBoundingClientRect().top > samImg.getBoundingClientRect().bottom){
-										samFull.classList.add('expanded-width')
-									}
-									
-									if(mobile_special.getBoundingClientRect().top > samImg.getBoundingClientRect().bottom)
-									{
-										mobile_special.classList.add('expanded-width');
-									}
-									else{
-										mobile_special.classList.remove('expanded-width');
-									}	
-		function adjustToImageSize(){
 			
-					
-					if(window.innerWidth < 856 && window.scrollY > mobile_special.getBoundingClientRect().top){
-						samImg.classList.add("stop-sticky");
-					}
-					else
-					{
-						samImg.classList.remove("stop-sticky");
-					}
-			
-		};
-			
-			
-			
-		window.addEventListener('scroll', adjustToImageSize);
-		adjustToImageSize();
-		
-		
-		function addMoreFunction(){
-					
-					const moreText = document.getElementById("moreLink");
-					
-					moreText.addEventListener("click", function(event){
-						
-						event.preventDefault();
-						
-						
-						const extraMenu = document.getElementById("extraMenuBar");
-						
-						if(extraMenu.style.display == null ||extraMenu.style.display =="none"){
-							extraMenu.style.display = "flex";
-						}
-						else //reset
-						{
-							extraMenu.style.display = "none";
-						}
-						
-					});
-				};
-	});}
+			const script1 = document.createElement('script');
+			script1.src = `js/functionJ.js?v=${new Date().getTime()}`;
+			document.body.appendChild(script1);
+			});
+
+	}
 	
 	window.addEventListener('load', 
 		    applyAdjustments  // Re-run the JavaScript adjustments when the page loads
