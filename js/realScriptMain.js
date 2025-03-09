@@ -15,9 +15,10 @@ function insertMenn(){
 	//
 
 	
-	
-	
-	document.addEventListener('DOMContentLoaded', function () {
+
+	function applyAdjustments(){
+		
+		document.addEventListener('DOMContentLoaded',function() { //define here 
 		
 		fetch("TopMenuBar.html")
 		    .then(response => response.text())
@@ -90,4 +91,11 @@ function insertMenn(){
 						
 					});
 				};
-	});
+	});}
+	
+	window.addEventListener('load', 
+		    applyAdjustments  // Re-run the JavaScript adjustments when the page loads
+		);
+		
+	applyAdjustments();
+		
