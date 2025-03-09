@@ -1,4 +1,5 @@
-fetch("TopMenuBar.html")
+function insertMenn(){
+	fetch("TopMenuBar.html")
     .then(response => response.text())
     .then(data => {
        	//console.log("TopMenuBar fetched:", data);
@@ -10,13 +11,26 @@ fetch("TopMenuBar.html")
 		
     })
     .catch(error => console.error("Error loading the TopMenuBar.html:", error));
-
+}
 	//
 
 	
 	
 	
 	document.addEventListener('DOMContentLoaded', function () {
+		
+		fetch("TopMenuBar.html")
+		    .then(response => response.text())
+		    .then(data => {
+		       	//console.log("TopMenuBar fetched:", data);
+				// insert very top
+				//document.body.insertAdjacentHTML('afterbegin', '<div class="pageContentContainer"></div>');
+		         document.body.insertAdjacentHTML('afterbegin', data); 
+				 addMoreFunction();
+				 // After the HTML has been inserted, now you can find and modify elements
+				
+		    })
+		    .catch(error => console.error("Error loading the TopMenuBar.html:", error));
 	    // Your JavaScript code here
 	    const img = document.querySelector('#samFirstContainer img');
 	        const imgRect = img.getBoundingClientRect();
@@ -47,10 +61,33 @@ fetch("TopMenuBar.html")
 						samImg.classList.remove("stop-sticky");
 					}
 			
-		}
+		};
 			
 			
 			
 		window.addEventListener('scroll', adjustToImageSize);
 		adjustToImageSize();
+		
+		
+		function addMoreFunction(){
+					
+					const moreText = document.getElementById("moreLink");
+					
+					moreText.addEventListener("click", function(event){
+						
+						event.preventDefault();
+						
+						
+						const extraMenu = document.getElementById("extraMenuBar");
+						
+						if(extraMenu.style.display == null ||extraMenu.style.display =="none"){
+							extraMenu.style.display = "flex";
+						}
+						else //reset
+						{
+							extraMenu.style.display = "none";
+						}
+						
+					});
+				};
 	});
