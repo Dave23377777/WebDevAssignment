@@ -48,7 +48,7 @@ padding: 15px 20px; /* Increased padding top/bottom */
   	display: block;
 }
 
-#imageContainer {
+#mainBackgroundImage {
 	 max-width:100%; /*needed to maintin crop at right hand side leaving the margin/padding set up in body else img overlayRHS margin*/
 	display:block;
     width: calc(100% - 30px);
@@ -71,14 +71,39 @@ padding: 15px 20px; /* Increased padding top/bottom */
 	position: sticky; /* come across stickty, seems to be my intention */
 	top:calc(80px);
 }
+
+#samFirstContainer img.stop-sticky {
+	
+	display:none;
+}
+
 #samFirstCoontainer {
 	padding: 55px;
 }
-#samFirstText {
+#samIntro {
 	background-color:black;
-	max-width:56%;
+	max-width:96%;
+	width:56%;
 	margin:2%;
-	padding : 20px;
+	padding : 0px 20px;
+}
+
+#samFull {
+	background-color:black;
+	max-width:96%;
+	width: 56%;
+	margin:2%;
+	padding : 20px;	
+}
+
+#samFull.expanded-width{
+	width: 100%;
+}
+
+
+#mobile-special.expanded-width {
+	width: 100vw;
+	background-color:black;
 }
 
 #homePageTag{

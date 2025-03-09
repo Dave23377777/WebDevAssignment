@@ -12,3 +12,54 @@ fetch("TopMenuBar.html")
     .catch(error => console.error("Error loading the TopMenuBar.html:", error));
 
 	//
+
+	
+	
+	
+	document.addEventListener('DOMContentLoaded', function () {
+	    // Your JavaScript code here
+	    const img = document.querySelector('#samFirstContainer img');
+	    if (img) {
+	        const imgRect = img.getBoundingClientRect();
+	        // Rest of your code
+		    }
+			// get scroll position past sams image and expand samFull to full width
+						const samImg = document.querySelector('#samFirstContainer img');
+						const samImgPos = samImg.getBoundingClientRect();
+						const samFull = document.querySelector("#samFull");	
+						const mobile_special = document.querySelector("#mobile-special");
+			if(samFull.getBoundingClientRect().top > samImgPos.bottom){
+				samFull.classList.add('expanded-width')
+				
+			
+				
+				
+			}
+			
+			if(mobile_special.getBoundingClientRect().top > samImgPos.bottom)
+			{
+				//mobile_special.classList.add('expanded-width');
+			}
+			else{
+				mobile_special.classList.add('expanded-width');
+			}
+		window.addEventListener('scroll', function() {
+			
+			
+			if(window.scrollY  > samImgPos.bottom){
+				samFull.classList.add('expanded-width')
+			}
+			
+			
+			
+			if(window.scrollY > mobile_special.getBoundingClientRect().top){
+				samImg.classList.add("stop-sticky");
+			}
+			else
+			{
+				samImg.classList.remove("stop-sticky");
+			}
+			
+			
+		});
+	});
