@@ -58,6 +58,10 @@ padding: 15px 20px; /* Increased padding top/bottom */
   	display: block;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 #mainBackgroundImage {
 	 max-width:100%; /*needed to maintin crop at right hand side leaving the margin/padding set up in body else img overlayRHS margin*/
 	display:block;
@@ -75,21 +79,22 @@ padding: 15px 20px; /* Increased padding top/bottom */
 	z-index: -1;
 	 min-height: 100%;
 }
+
 #samFirstContainer img {
 	width:40%;
 	float: right;
 	position: sticky; /* come across stickty, seems to be my intention */
 	top:calc(80px);
+	padding : 0% 2%;
+	 
 }
 
 #samFirstContainer img.stop-sticky {
-	
+	position:relative;
 	display:none;
+	
 }
 
-#samFirstCoontainer {
-	padding: 55px;
-}
 #samIntro {
 	background-color:black;
 	max-width:96%;

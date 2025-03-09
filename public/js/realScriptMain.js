@@ -39,7 +39,7 @@ fetch("TopMenuBar.html")
 		function adjustToImageSize(){
 			
 					
-					if(window.scrollY > mobile_special.getBoundingClientRect().top){
+					if(window.innerWidth < 856 && window.scrollY > mobile_special.getBoundingClientRect().top){
 						samImg.classList.add("stop-sticky");
 					}
 					else
